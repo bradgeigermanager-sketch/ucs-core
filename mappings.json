@@ -1,0 +1,20 @@
+{
+  "version": "1.0.0",
+  "mappings": {
+    "LBC": {
+      "65.05": "HUB_MGMT_01",
+      "378": "HUB_EDU_01",
+      "72": "HUB_ARCH_01"
+    },
+    "UDC": {
+      "005:378": "HUB_MGMT_01",
+      "378": "HUB_EDU_01",
+      "72": "HUB_ARCH_01"
+    },
+    "DDC": {
+      "378.006": "HUB_MGMT_01",
+      "378": "HUB_EDU_01",
+      "720": "HUB_ARCH_01"
+    }
+  }
+}
