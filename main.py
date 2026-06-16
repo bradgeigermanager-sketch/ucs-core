@@ -19,3 +19,16 @@ class CatalogEngine:
                 return s_code
         return None
 
+ class TransformerFactory:
+    _transformers = {
+        "NIEM": NIEMTransformer(),
+        "LBC": LBCTransformer()
+    }
+
+    @classmethod
+    def get_transformer(cls, system_type):
+        return cls._transformers.get(system_type)
+
+# Usage:
+transformer = TransformerFactory.get_transformer("NIEM")
+xml_output = transformer.transform(hub_object)
