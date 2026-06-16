@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CatalogManifest",
+  "description": "Standardized entry form for UCS cataloging",
+  "type": "object",
+  "properties": {
+    "hub_id": { "type": "string", "description": "Unique identifier for the knowledge node" },
+    "entry_metadata": {
+      "type": "object",
+      "properties": {
+        "timestamp": { "type": "string", "format": "date-time" },
+        "source_system": { "enum": ["LBC", "UDC", "DDC", "INTERNAL"] },
+        "original_code": { "type": "string" }
+      },
+      "required": ["timestamp", "source_system", "original_code"]
+    },
+    "spoke_mappings": {
+      "type": "object",
+      "properties": {
+        "LBC": { "type": "string" },
+        "UDC": { "type": "string" },
+        "DDC": { "type": "string" }
+      }
+    }
+  },
+  "required": ["hub_id", "entry_metadata"]
+}
