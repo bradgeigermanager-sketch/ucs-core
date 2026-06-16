@@ -21,3 +21,9 @@ class NIEMTransformer(BaseTransformer):
         # Check for mandatory NIEM namespace declarations
         return "xmlns:nc" in output and output.startswith("<")
         
+class TransformerFactory:
+    @classmethod
+    def get_transformer(cls, system_type):
+        from . import REGISTRY
+        return REGISTRY.get(system_type.upper())
+        
